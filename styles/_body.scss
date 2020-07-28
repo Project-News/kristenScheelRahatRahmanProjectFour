@@ -1,0 +1,76 @@
+body, h1, p, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+}
+
+.wrapper {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  background: $headerColor;
+  padding: 50px 0;
+
+    h1 {
+      font-size: 4rem;
+      text-transform: uppercase;
+    }
+}
+
+.displaySection {
+    h2 {
+      font-size: 3rem;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .topHeadlines {
+      display: flex;
+      border: 2px solid black;
+
+    .story {
+      width: calc(100% / 4);
+      border: 1px solid lightgray;
+      padding: 0 10px;
+
+      h3 {
+        font-size: 2.5rem;
+        text-align: center;
+        padding: 10px;
+      }
+
+      p {
+        padding: 15px 0;
+      }
+
+      button {
+        background: $headerColor;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+
+        &:hover, &:focus {
+          background: grey;
+          color: white;
+        } 
+      }
+    }
+  }
+}
+
+
+
