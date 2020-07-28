@@ -1,11 +1,4 @@
-h1 {
-  color: yellow;
-}
+@import "setup";
+@import "variables";
+@import "body";
 
-h2 {
-    color: red;
-}
-
-h3 {
-  color: blue;
-}
