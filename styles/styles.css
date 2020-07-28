@@ -232,6 +232,7 @@ html {
 
 body {
   font-size: 2rem;
+  font-family: "EB Garamond", serif;
 }
 
 .wrapper {
@@ -250,11 +251,13 @@ header {
 }
 
 header h1 {
+  font-family: "Abril Fatface", cursive;
   font-size: 4rem;
   text-transform: uppercase;
 }
 
 .displaySection h2 {
+  font-family: "Abril Fatface", cursive;
   font-size: 3rem;
   text-align: center;
   padding: 20px 0;
@@ -274,6 +277,7 @@ header h1 {
 }
 
 .displaySection .topHeadlines .story h3 {
+  font-family: "Abril Fatface", cursive;
   font-size: 2.5rem;
   text-align: center;
   padding: 10px;
@@ -316,4 +320,22 @@ header h1 {
 .categorySection .buttons button:hover, .categorySection .buttons button:focus {
   background-color: white;
   color: black;
+}
+
+footer {
+  background-color: #dee2e6;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  margin-bottom: 5px;
+}
+
+footer a {
+  color: black;
+}
+
+footer a:hover, footer a:focus {
+  color: gray;
 }
