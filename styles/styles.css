@@ -246,7 +246,7 @@ img {
 
 header {
   background: #dee2e6;
-  padding: 50px 0;
+  padding: 25px 0;
 }
 
 header h1 {
@@ -293,4 +293,27 @@ header h1 {
 .displaySection .topHeadlines .story button:hover, .displaySection .topHeadlines .story button:focus {
   background: grey;
   color: white;
+}
+
+.categorySection .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 50px 0;
+}
+
+.categorySection .buttons button {
+  text-transform: uppercase;
+  border: 1px solid gray;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 25px 40px;
+}
+
+.categorySection .buttons button:hover, .categorySection .buttons button:focus {
+  background-color: white;
+  color: black;
 }

@@ -23,7 +23,7 @@ img {
 
 header {
   background: $headerColor;
-  padding: 50px 0;
+  padding: 25px 0;
 
     h1 {
       font-size: 4rem;
@@ -72,5 +72,24 @@ header {
   }
 }
 
+.categorySection {
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+        margin: 50px 0;
+        
+        button {
+            text-transform: uppercase;
+            border: 1px solid gray;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            padding: 25px 40px;
 
-
+            &:hover, &:focus {
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+}
