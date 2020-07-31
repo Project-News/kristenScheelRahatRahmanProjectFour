@@ -233,7 +233,9 @@ body {
 }
 
 img {
-  max-width: 100%;
+  max-width: 90%;
+  display: block;
+  margin: 0 auto;
 }
 
 header {
@@ -258,6 +260,8 @@ header h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   border: 2px solid black;
 }
 
@@ -291,6 +295,7 @@ header h1 {
   text-transform: uppercase;
   border: 1px solid gray;
   background-color: black;
+  margin: 0 20px;
   color: white;
   cursor: pointer;
   padding: 25px 40px;
@@ -317,4 +322,11 @@ footer a {
 
 footer a:hover, footer a:focus {
   color: gray;
+}
+
+@media (max-width: 950px) {
+  .displaySection .topHeadlines .story {
+    width: calc(100% / 2);
+    padding-bottom: 50px;
+  }
 }
