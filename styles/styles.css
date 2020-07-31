@@ -212,7 +212,7 @@ html {
           box-sizing: inherit;
 }
 
-body, h1, p, h2, h3 {
+body, h1, h2, h3, p {
   margin: 0;
   padding: 0;
 }
