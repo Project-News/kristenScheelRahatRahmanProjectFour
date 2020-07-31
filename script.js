@@ -1,6 +1,7 @@
 const newsApp = {};
 
 newsApp.apiKey = 'e32b1ccf9b2e4d5b863a679c47ea4f0e';
+newsApp.articleNumber = 4;
 newsApp.articlesArray = [];
 
 newsApp.getHeadlines = () => {
@@ -13,7 +14,7 @@ newsApp.getHeadlines = () => {
       params: {
         apiKey: newsApp.apiKey,
         country: 'ca',
-        pageSize: 4
+        pageSize: newsApp.articleNumber
       }
     }
   }).then(function (result) {
@@ -33,7 +34,7 @@ newsApp.getNewsByCategory = (category) => {
         apiKey: newsApp.apiKey,
         country: 'ca',
         category: category,
-        pageSize: 4
+        pageSize: newsApp.articleNumber
       }
     }
   }).then(function (result) {
@@ -43,7 +44,7 @@ newsApp.getNewsByCategory = (category) => {
 }
 
 newsApp.displayArticles = () => {
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < newsApp.articleNumber; i++) {
     newsApp.displayHeadline(i, newsApp.articlesArray[i]);
     newsApp.displayImage(i, newsApp.articlesArray[i]);
     newsApp.displayDescription(i, newsApp.articlesArray[i]);
@@ -69,22 +70,43 @@ newsApp.displayLink = (i, article) => {
 }
 
 newsApp.registerListeners = () => {
-  $('#button1').click(function () {
-    newsApp.getNewsByCategory('technology');
-    $('h2').html("Today's Technology Headlines");
-  });
-  $('#button2').click(function () {
-    newsApp.getNewsByCategory('business');
-    $('h2').html("Today's Business Headlines");
-  });
-  $('#button3').click(function () {
-    newsApp.getNewsByCategory('health');
-    $('h2').html("Today's Health Headlines");
-  });
-  $('#button4').click(function () {
-    newsApp.getHeadlines();
-    $('h2').html("Today's Top Headlines");
-  });
+  $('button').on('click', function(){
+    const thisId = $(this).attr('id');
+    //console.log(thisId);
+    if (thisId === 'button1') {
+      newsApp.getNewsByCategory('technology');
+      $('h2').html("Today's Technology Headlines");
+    } 
+    if (thisId === 'button2') {
+      newsApp.getNewsByCategory('business');
+      $('h2').html("Today's Business Headlines");
+    }
+    if (thisId === 'button3') {
+      newsApp.getNewsByCategory('health');
+      $('h2').html("Today's Health Headlines");
+    }
+    if (thisId === 'button4') {
+      newsApp.getHeadlines();
+      $('h2').html("Today's Top Headlines");
+    }
+  })
+
+  // $('#button1').click(function () {
+  //   newsApp.getNewsByCategory('technology');
+  //   $('h2').html("Today's Technology Headlines");
+  // });
+  // $('#button2').click(function () {
+  //   newsApp.getNewsByCategory('business');
+  //   $('h2').html("Today's Business Headlines");
+  // });
+  // $('#button3').click(function () {
+  //   newsApp.getNewsByCategory('health');
+  //   $('h2').html("Today's Health Headlines");
+  // });
+  // $('#button4').click(function () {
+  //   newsApp.getHeadlines();
+  //   $('h2').html("Today's Top Headlines");
+  // });
 }
 
 newsApp.init = () => {
