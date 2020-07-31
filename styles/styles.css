@@ -202,15 +202,6 @@ template {
   display: none;
 }
 
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: '';
-  clear: both;
-  height: 0;
-}
-
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -219,20 +210,6 @@ html {
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
 
 body, h1, p, h2, h3 {
@@ -299,18 +276,6 @@ header h1 {
 
 .displaySection .topHeadlines .story p {
   padding: 15px 0;
-}
-
-.displaySection .topHeadlines .story button {
-  background: #dee2e6;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.displaySection .topHeadlines .story button:hover, .displaySection .topHeadlines .story button:focus {
-  background: grey;
-  color: white;
 }
 
 .categorySection .buttons {

@@ -60,18 +60,6 @@ header {
       p {
         padding: 15px 0;
       }
-
-      button {
-        background: $headerColor;
-        border: none;
-        padding: 5px 10px;
-        cursor: pointer;
-
-        &:hover, &:focus {
-          background: grey;
-          color: white;
-        } 
-      }
     }
   }
 }
