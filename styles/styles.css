@@ -268,7 +268,7 @@ header h1 {
 .displaySection .topHeadlines .story {
   width: calc(100% / 4);
   border: 1px solid lightgray;
-  padding: 0 10px;
+  padding: 0 10px 50px;
 }
 
 .displaySection .topHeadlines .story h3 {
@@ -280,6 +280,13 @@ header h1 {
 
 .displaySection .topHeadlines .story p {
   padding: 15px 0;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+.displaySection .topHeadlines .story a {
+  margin-left: 5%;
 }
 
 .categorySection .buttons {
@@ -289,6 +296,7 @@ header h1 {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin: 50px 0;
+  border: 1px solid red;
 }
 
 .categorySection .buttons button {

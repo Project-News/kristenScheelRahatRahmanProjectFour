@@ -51,7 +51,7 @@ header {
     .story {
       width: calc(100% / 4);
       border: 1px solid lightgray;
-      padding: 0 10px;
+      padding: 0 10px 50px;
 
       h3 {
         font-family: $headingFont;
@@ -62,8 +62,13 @@ header {
 
       p {
         padding: 15px 0;
-        //width: 90%;
-        //text-align: center;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+      }
+
+      a {
+        margin-left: 5%;
       }
     }
   }
@@ -74,7 +79,8 @@ header {
         display: flex;
         justify-content: space-around;
         margin: 50px 0;
-        
+        border: 1px solid red;
+
         button {
             text-transform: uppercase;
             border: 1px solid gray;
