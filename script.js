@@ -57,12 +57,13 @@ newsApp.displayHeadline = (i, article) => {
 }
 
 newsApp.displayImage = (i, article) => {
-  if (article.urlToImage == null) {
+  if (article.urlToImage === null) {
     $(`#image${i}`).attr('src', './images/news.png');
+    $(`#image${i}`).attr('alt', 'placeholder image');
   } else {
     $(`#image${i}`).attr('src', article.urlToImage);
+    $(`#image${i}`).attr('alt', article.title);
   }
-  $(`#image${i}`).attr('alt', article.title);
 }
 
 newsApp.displayDescription = (i, article) => {
@@ -75,8 +76,9 @@ newsApp.displayLink = (i, article) => {
 
 newsApp.registerListeners = () => {
   $('button').on('click', function(){
+    $('button').removeClass('buttonSelected');
+    $(this).addClass('buttonSelected');
     const thisId = $(this).attr('id');
-    //console.log(thisId);
     if (thisId === 'button1') {
       newsApp.getNewsByCategory('technology');
       $('h2').html("Today's Technology Headlines");
@@ -93,26 +95,7 @@ newsApp.registerListeners = () => {
       newsApp.getHeadlines();
       $('h2').html("Today's Top Headlines");
     }
-    $('.buttonSelected').removeClass('buttonSelected');
-    $(this).addClass('buttonSelected');
   })
-
-  // $('#button1').click(function () {
-  //   newsApp.getNewsByCategory('technology');
-  //   $('h2').html("Today's Technology Headlines");
-  // });
-  // $('#button2').click(function () {
-  //   newsApp.getNewsByCategory('business');
-  //   $('h2').html("Today's Business Headlines");
-  // });
-  // $('#button3').click(function () {
-  //   newsApp.getNewsByCategory('health');
-  //   $('h2').html("Today's Health Headlines");
-  // });
-  // $('#button4').click(function () {
-  //   newsApp.getHeadlines();
-  //   $('h2').html("Today's Top Headlines");
-  // });
 }
 
 newsApp.init = () => {
