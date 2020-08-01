@@ -1,12 +1,10 @@
 const newsApp = {};
 
 newsApp.apiKey = 'e32b1ccf9b2e4d5b863a679c47ea4f0e';
-newsApp.headlinesArray = [];
-newsApp.imagesArray = [];
-newsApp.descriptionArray = [];
-newsApp.linksArray = [];
+newsApp.articleNumber = 4;
+newsApp.articlesArray = [];
 
-newsApp.getHeadlines = () => {
+newsApp.getNewsByCategory = (category) => {
   $.ajax({
     url: 'https://proxy.hackeryou.com',
     dataType: 'json',
@@ -16,51 +14,74 @@ newsApp.getHeadlines = () => {
       params: {
         apiKey: newsApp.apiKey,
         country: 'ca',
-        pageSize: 4
+        category: category,
+        pageSize: newsApp.articleNumber
       }
     }
   }).then(function (result) {
-    console.log(result);
-    for (let i = 0; i < 4; i++) {
-      newsApp.headlinesArray.push(result.articles[i].title);
-      newsApp.imagesArray.push(result.articles[i].urlToImage);
-      newsApp.descriptionArray.push(result.articles[i].description);
-      newsApp.linksArray.push(result.articles[i].url);
-    }
-    newsApp.displayHeadlines();
-    newsApp.displayImages();
-    newsApp.displayDescription();
-    newsApp.displayLinks();
+    newsApp.articlesArray = result.articles;
+    newsApp.displayArticles();
   })
 }
 
-newsApp.displayHeadlines = () => {
-  for (let i = 0; i < 4; i++) {
-    $(`#heading${i}`).html(newsApp.headlinesArray[i]);
+newsApp.displayArticles = () => {
+  for (let i = 0; i < newsApp.articleNumber; i++) {
+    newsApp.displayHeadline(i, newsApp.articlesArray[i]);
+    newsApp.displayImage(i, newsApp.articlesArray[i]);
+    newsApp.displayDescription(i, newsApp.articlesArray[i]);
+    newsApp.displayLink(i, newsApp.articlesArray[i]);
   }
 }
 
-newsApp.displayImages = () => {
-  for (let i = 0; i < 4; i++) {
-    $(`#image${i}`).attr('src', newsApp.imagesArray[i]);
-    $(`#image${i}`).attr('alt', newsApp.headlinesArray[i]);
+newsApp.displayHeadline = (i, article) => {
+  $(`#heading${i}`).html(article.title);
+}
+
+newsApp.displayImage = (i, article) => {
+  if (article.urlToImage === null) {
+    $(`#image${i}`).attr('src', './images/news.png');
+    $(`#image${i}`).attr('alt', 'placeholder image');
+  } else {
+    $(`#image${i}`).attr('src', article.urlToImage);
+    $(`#image${i}`).attr('alt', article.title);
   }
 }
 
-newsApp.displayDescription = () => {
-  for (let i = 0; i < 4; i++) {
-    $(`#desc${i}`).html(newsApp.descriptionArray[i]);
-  }
+newsApp.displayDescription = (i, article) => {
+  $(`#desc${i}`).html(article.description);
 }
 
-newsApp.displayLinks = () => {
-  for (let i = 0; i < 4; i++) {
-    $(`#link${i}`).attr('href', newsApp.linksArray[i]);
-  }
+newsApp.displayLink = (i, article) => {
+  $(`#link${i}`).attr('href', article.url);
+}
+
+newsApp.registerListeners = () => {
+  $('button').on('click', function(){
+    $('button').removeClass('buttonSelected');
+    $(this).addClass('buttonSelected');
+    const thisId = $(this).attr('id');
+    if (thisId === 'button1') {
+      newsApp.getNewsByCategory('technology');
+      $('h2').html("Today's Technology Headlines");
+    } 
+    if (thisId === 'button2') {
+      newsApp.getNewsByCategory('business');
+      $('h2').html("Today's Business Headlines");
+    }
+    if (thisId === 'button3') {
+      newsApp.getNewsByCategory('health');
+      $('h2').html("Today's Health Headlines");
+    }
+    if (thisId === 'button4') {
+        newsApp.getNewsByCategory('');
+        $('h2').html("Today's Latest Headlines");
+    }
+  })
 }
 
 newsApp.init = () => {
-  newsApp.getHeadlines();
+  newsApp.getNewsByCategory('');
+  newsApp.registerListeners();
 }
 
 $(function() {

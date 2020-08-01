@@ -212,7 +212,7 @@ html {
           box-sizing: inherit;
 }
 
-body, h1, p, h2, h3 {
+body, h1, h2, h3, p {
   margin: 0;
   padding: 0;
 }
@@ -233,7 +233,9 @@ body {
 }
 
 img {
-  max-width: 100%;
+  max-width: 90%;
+  display: block;
+  margin: 0 auto;
 }
 
 header {
@@ -258,13 +260,15 @@ header h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   border: 2px solid black;
 }
 
 .displaySection .topHeadlines .story {
   width: calc(100% / 4);
   border: 1px solid lightgray;
-  padding: 0 10px;
+  padding: 0 10px 50px;
 }
 
 .displaySection .topHeadlines .story h3 {
@@ -276,6 +280,13 @@ header h1 {
 
 .displaySection .topHeadlines .story p {
   padding: 15px 0;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+.displaySection .topHeadlines .story a {
+  margin-left: 5%;
 }
 
 .categorySection .buttons {
@@ -291,12 +302,14 @@ header h1 {
   text-transform: uppercase;
   border: 1px solid gray;
   background-color: black;
+  margin: 0 20px;
   color: white;
+  padding: 25px 0;
+  width: 50%;
   cursor: pointer;
-  padding: 25px 40px;
 }
 
-.categorySection .buttons button:hover, .categorySection .buttons button:focus {
+.categorySection .buttons button:hover, .categorySection .buttons button:focus, .categorySection .buttons button.buttonSelected {
   background-color: white;
   color: black;
 }
@@ -317,4 +330,42 @@ footer a {
 
 footer a:hover, footer a:focus {
   color: gray;
+}
+
+@media (max-width: 950px) {
+  .displaySection .topHeadlines .story {
+    width: calc(100% / 2);
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 840px) {
+  .categorySection .buttons button {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .displaySection .topHeadlines .story {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .categorySection .buttons {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 500px) {
+  .categorySection .buttons button {
+    width: 70%;
+  }
+}
+
+@media (max-width: 340px) {
+  header h1 {
+    text-align: center;
+  }
 }

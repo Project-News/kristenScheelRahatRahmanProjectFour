@@ -1,4 +1,4 @@
-body, h1, p, h2, h3 {
+body, h1, h2, h3, p {
   margin: 0;
   padding: 0;
 }
@@ -19,7 +19,9 @@ body {
 }
 
 img {
-  max-width: 100%;
+  max-width: 90%;
+  display: block;
+  margin: 0 auto;
 }
 
 header {
@@ -43,12 +45,13 @@ header {
 
     .topHeadlines {
       display: flex;
+      flex-wrap: wrap;
       border: 2px solid black;
 
     .story {
       width: calc(100% / 4);
       border: 1px solid lightgray;
-      padding: 0 10px;
+      padding: 0 10px 50px;
 
       h3 {
         font-family: $headingFont;
@@ -59,6 +62,13 @@ header {
 
       p {
         padding: 15px 0;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+      }
+
+      a {
+        margin-left: 5%;
       }
     }
   }
@@ -69,22 +79,26 @@ header {
         display: flex;
         justify-content: space-around;
         margin: 50px 0;
-        
+
         button {
             text-transform: uppercase;
             border: 1px solid gray;
             background-color: black;
+            margin: 0 20px;
             color: white;
+            padding: 25px 0;
+            width: 50%;
             cursor: pointer;
-            padding: 25px 40px;
 
-            &:hover, &:focus {
+            &:hover, &:focus, &.buttonSelected {
                 background-color: white;
                 color: black;
             }
         }
     }
 }
+
+
 
 footer {
     background-color: $headerColor;

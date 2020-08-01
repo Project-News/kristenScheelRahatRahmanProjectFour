@@ -3,49 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 4</title>
+  <title>Project 4: News Project</title>
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/styles.css">
 </head>
+
 <body>
   <header>
     <div class="wrapper">
       <h1>News Project</h1>
     </div>
   </header>
+  
   <main>
     <section class="displaySection">
       <div class="wrapper">
-        <h2>Today's Top Headlines</h2>
+        <h2>Today's Latest Headlines</h2>
+
         <div class="topHeadlines">
-          <div class="story storyOne">
+          <div class="story">
             <h3 id="heading0"></h3>
-            <div class="imageContainer">
+            <div>
               <img src="" alt="" id="image0">
             </div>
             <p id="desc0"></p>
             <a href="" id="link0" target="_blank">Read More</a> 
           </div>
-          <div class="story storyTwo">
+
+          <div class="story">
             <h3 id="heading1"></h3>
-            <div class="imageContainer">
+            <div>
               <img src="" alt="" id="image1">
             </div>
             <p id="desc1"></p>
             <a href="" id="link1" target="_blank">Read More</a>
           </div>
-          <div class="story storyThree">
+
+          <div class="story">
             <h3 id="heading2"></h3>
-            <div class="imageContainer">
+            <div>
               <img src="" alt="" id="image2">
             </div>
             <p id="desc2"></p>
             <a href="" id="link2" target="_blank">Read More</a>
           </div>
-          <div class="story storyFour">
+
+          <div class="story">
             <h3 id="heading3"></h3>
-            <div class="imageContainer">
+            <div>
               <img src="" alt="" id="image3">
             </div>
             <p id="desc3"></p>
@@ -54,15 +61,17 @@
         </div>
       </div>
     </section>
+
     <section class="categorySection wrapper">
         <div class="buttons">
-            <button>Technology Headlines</button>
-            <button>Business Headlines</button>
-            <button>Health Headlines</button>
-            <button>General Headlines</button>
+            <button id="button1">Technology</button>
+            <button id="button2">Business</button>
+            <button id="button3">Health</button>
+            <button id="button4" class="buttonSelected">Latest</button>
         </div>
     </section>
   </main>
+
   <footer>
       <div class="wrapper">
           <p>Headlines provided by <a href="https://newsapi.org/docs">NewsAPI</a>.</p>
@@ -70,8 +79,8 @@
       </div>
   </footer>
 
-  <script src='https://code.jquery.com/jquery-3.2.1.min.js'
-    integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
+  <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
   <script src="./script.js"></script>
+
 </body>
 </html>
