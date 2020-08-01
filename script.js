@@ -4,25 +4,6 @@ newsApp.apiKey = 'e32b1ccf9b2e4d5b863a679c47ea4f0e';
 newsApp.articleNumber = 4;
 newsApp.articlesArray = [];
 
-newsApp.getHeadlines = () => {
-  $.ajax({
-    url: 'http://proxy.hackeryou.com',
-    dataType: 'json',
-    method: 'GET',
-    data: {
-      reqUrl: 'https://newsapi.org/v2/top-headlines',
-      params: {
-        apiKey: newsApp.apiKey,
-        country: 'ca',
-        pageSize: newsApp.articleNumber
-      }
-    }
-  }).then(function (result) {
-    newsApp.articlesArray = result.articles;
-    newsApp.displayArticles();
-  })
-}
-
 newsApp.getNewsByCategory = (category) => {
   $.ajax({
     url: 'http://proxy.hackeryou.com',
@@ -92,14 +73,14 @@ newsApp.registerListeners = () => {
       $('h2').html("Today's Health Headlines");
     }
     if (thisId === 'button4') {
-      newsApp.getHeadlines();
-      $('h2').html("Today's Top Headlines");
+        newsApp.getNewsByCategory('');
+        $('h2').html("Today's Latest Headlines");
     }
   })
 }
 
 newsApp.init = () => {
-  newsApp.getHeadlines();
+  newsApp.getNewsByCategory('');
   newsApp.registerListeners();
 }
 
