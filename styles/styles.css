@@ -309,7 +309,7 @@ header h1 {
   padding: 25px 40px;
 }
 
-.categorySection .buttons button:hover, .categorySection .buttons button:focus {
+.categorySection .buttons button:hover, .categorySection .buttons button:focus, .categorySection .buttons button.buttonSelected {
   background-color: white;
   color: black;
 }

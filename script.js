@@ -57,7 +57,11 @@ newsApp.displayHeadline = (i, article) => {
 }
 
 newsApp.displayImage = (i, article) => {
-  $(`#image${i}`).attr('src', article.urlToImage);
+  if (article.urlToImage == null) {
+    $(`#image${i}`).attr('src', './images/news.png');
+  } else {
+    $(`#image${i}`).attr('src', article.urlToImage);
+  }
   $(`#image${i}`).attr('alt', article.title);
 }
 
@@ -89,6 +93,8 @@ newsApp.registerListeners = () => {
       newsApp.getHeadlines();
       $('h2').html("Today's Top Headlines");
     }
+    $('.buttonSelected').removeClass('buttonSelected');
+    $(this).addClass('buttonSelected');
   })
 
   // $('#button1').click(function () {
