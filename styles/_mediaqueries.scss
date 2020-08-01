@@ -8,3 +8,49 @@
     }
   }
 }
+
+@media (max-width: 840px) {
+    .categorySection {
+        .buttons {
+            button {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .displaySection {
+    .topHeadlines {
+      .story {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+    .categorySection {
+        .buttons {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .categorySection {
+        .buttons {
+            button {
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media (max-width: 340px) {
+    header {
+        h1 {
+            text-align: center;
+        }
+    }
+}

@@ -79,7 +79,6 @@ header {
         display: flex;
         justify-content: space-around;
         margin: 50px 0;
-        border: 1px solid red;
 
         button {
             text-transform: uppercase;
@@ -87,8 +86,9 @@ header {
             background-color: black;
             margin: 0 20px;
             color: white;
+            padding: 25px 0;
+            width: 50%;
             cursor: pointer;
-            padding: 25px 40px;
 
             &:hover, &:focus, &.buttonSelected {
                 background-color: white;
