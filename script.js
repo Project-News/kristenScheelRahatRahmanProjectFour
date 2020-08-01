@@ -8,7 +8,7 @@ newsApp.linksArray = [];
 
 newsApp.getHeadlines = () => {
   $.ajax({
-    url: 'http://proxy.hackeryou.com',
+    url: 'https://proxy.hackeryou.com',
     dataType: 'json',
     method: 'GET',
     data: {
