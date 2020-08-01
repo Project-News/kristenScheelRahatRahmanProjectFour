@@ -89,6 +89,8 @@ newsApp.registerListeners = () => {
       newsApp.getHeadlines();
       $('h2').html("Today's Top Headlines");
     }
+    $('.buttonSelected').removeClass('buttonSelected');
+    $(this).addClass('buttonSelected');
   })
 
   // $('#button1').click(function () {
