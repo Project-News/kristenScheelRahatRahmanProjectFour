@@ -39,8 +39,8 @@ newsApp.displayHeadline = (i, article) => {
 
 newsApp.displayImage = (i, article) => {
   if (article.urlToImage === null) {
-    $(`#image${i}`).attr('src', './images/news.png');
-    $(`#image${i}`).attr('alt', 'placeholder image');
+    $(`#image${i}`).attr('src', './images/youTube.png');
+    $(`#image${i}`).attr('alt', 'placeholder YouTube image');
   } else {
     $(`#image${i}`).attr('src', article.urlToImage);
     $(`#image${i}`).attr('alt', article.title);
@@ -52,14 +52,20 @@ newsApp.displayDescription = (i, article) => {
 }
 
 newsApp.displayLink = (i, article) => {
+  if (article.urlToImage === null) {
+    $(`#link${i}`).html('YouTube Video');
+  } else {
+    $(`#link${i}`).html('Read More');
+  }
   $(`#link${i}`).attr('href', article.url);
 }
 
 newsApp.registerListeners = () => {
-  $('button').on('click', function(){
-    $('button').removeClass('buttonSelected');
+  $('button').on('click', function() {
+    $('.buttonSelected').removeClass('buttonSelected');
     $(this).addClass('buttonSelected');
     const thisId = $(this).attr('id');
+
     if (thisId === 'button1') {
       newsApp.getNewsByCategory('technology');
       $('h2').html("Today's Technology Headlines");
