@@ -1,10 +1,11 @@
 const newsApp = {};
 
 newsApp.apiKey = 'e32b1ccf9b2e4d5b863a679c47ea4f0e';
+newsApp.country = 'ca';
 newsApp.articleNumber = 4;
 newsApp.articlesArray = [];
 
-newsApp.getNewsByCategory = (category) => {
+newsApp.getNewsByCategory = (category, country) => {
   $.ajax({
     url: 'https://proxy.hackeryou.com',
     dataType: 'json',
@@ -13,7 +14,7 @@ newsApp.getNewsByCategory = (category) => {
       reqUrl: 'https://newsapi.org/v2/top-headlines',
       params: {
         apiKey: newsApp.apiKey,
-        country: 'ca',
+        country: country,
         category: category,
         pageSize: newsApp.articleNumber
       }
@@ -67,27 +68,47 @@ newsApp.registerListeners = () => {
     const thisId = $(this).attr('id');
 
     if (thisId === 'button1') {
-      newsApp.getNewsByCategory('technology');
+      newsApp.getNewsByCategory('technology', newsApp.country);
       $('h2').html("Today's Technology Headlines");
     } 
     if (thisId === 'button2') {
-      newsApp.getNewsByCategory('business');
+      newsApp.getNewsByCategory('business', newsApp.country);
       $('h2').html("Today's Business Headlines");
     }
     if (thisId === 'button3') {
-      newsApp.getNewsByCategory('health');
+      newsApp.getNewsByCategory('health', newsApp.country);
       $('h2').html("Today's Health Headlines");
     }
     if (thisId === 'button4') {
-        newsApp.getNewsByCategory('');
+        newsApp.getNewsByCategory('', newsApp.country);
         $('h2').html("Today's Latest Headlines");
     }
   })
 }
 
+newsApp.formListener = () => {
+  $('form').on('change', function() {
+    const selectedCountry = $('#country option:selected').text();
+    if (selectedCountry === 'US 🇺🇸') {
+        newsApp.country = 'us';
+        $('#flag').attr('src', './images/american.png');
+        $('#flag').attr('alt', 'american flag');
+    } else if (selectedCountry === 'Canada 🇨🇦') {
+        newsApp.country = 'ca';
+        $('#flag').attr('src', './images/canadian.png');
+        $('#flag').attr('alt', 'canadian flag');
+    }
+    newsApp.getNewsByCategory('', newsApp.country);
+    $('.buttonSelected').removeClass('buttonSelected');
+    $('#button4').addClass('buttonSelected');
+    $('h2').html("Today's Latest Headlines");
+  })
+}
+
 newsApp.init = () => {
-  newsApp.getNewsByCategory('');
+  newsApp.getNewsByCategory('', newsApp.country);
   newsApp.registerListeners();
+  newsApp.formListener();
 }
 
 $(function() {
