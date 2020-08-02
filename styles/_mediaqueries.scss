@@ -38,6 +38,12 @@
 }
 
 @media (max-width: 500px) {
+    .displaySection {
+        .flag {
+            width: 15%;
+        }
+    }
+
     .categorySection {
         .buttons {
             button {
@@ -49,8 +55,28 @@
 
 @media (max-width: 340px) {
     header {
-        h1 {
-            text-align: center;
+        .head {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .displaySection {
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        .flag {
+            width: 20%;
+        }
+
+        .topHeadlines {
+            .story {
+                h3 {
+                    font-size: 2rem;
+                }
+            }
         }
     }
 }

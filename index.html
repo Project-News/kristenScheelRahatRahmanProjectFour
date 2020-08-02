@@ -12,8 +12,15 @@
 
 <body>
   <header>
-    <div class="wrapper">
+    <div class="wrapper head canadian">
       <h1>News Project</h1>
+      <form>
+        <label for="country" class="sr-only">Choose an edition</label>
+        <select name="country" id="country">
+            <option value="canada" selected>Canada 🇨🇦</option>
+            <option value="us">US 🇺🇸</option>
+        </select>
+      </form>
     </div>
   </header>
   
@@ -21,6 +28,9 @@
     <section class="displaySection">
       <div class="wrapper">
         <h2>Today's Latest Headlines</h2>
+        <div class="flag">
+            <img src="./images/canadian.png" alt="canadian flag" id="flag">
+        </div>
 
         <div class="topHeadlines">
           <div class="story">
@@ -29,7 +39,7 @@
               <img src="" alt="" id="image0">
             </div>
             <p id="desc0"></p>
-            <a href="" id="link0" target="_blank">Read More</a> 
+            <a href="" id="link0" target="_blank"></a> 
           </div>
 
           <div class="story">
@@ -38,7 +48,7 @@
               <img src="" alt="" id="image1">
             </div>
             <p id="desc1"></p>
-            <a href="" id="link1" target="_blank">Read More</a>
+            <a href="" id="link1" target="_blank"></a>
           </div>
 
           <div class="story">
@@ -47,7 +57,7 @@
               <img src="" alt="" id="image2">
             </div>
             <p id="desc2"></p>
-            <a href="" id="link2" target="_blank">Read More</a>
+            <a href="" id="link2" target="_blank"></a>
           </div>
 
           <div class="story">
@@ -56,7 +66,7 @@
               <img src="" alt="" id="image3">
             </div>
             <p id="desc3"></p>
-            <a href="" id="link3" target="_blank">Read More</a>
+            <a href="" id="link3" target="_blank"></a>
           </div>
         </div>
       </div>
