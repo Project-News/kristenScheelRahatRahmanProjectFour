@@ -12,8 +12,15 @@
 
 <body>
   <header>
-    <div class="wrapper">
+    <div class="wrapper head canadian">
       <h1>News Project</h1>
+      <form>
+        <label for="country" class="sr-only">Choose an edition</label>
+        <select name="country" id="country">
+            <option value="canada" selected>Canada 🇨🇦</option>
+            <option value="us">US 🇺🇸</option>
+        </select>
+      </form>
     </div>
   </header>
   
@@ -21,6 +28,9 @@
     <section class="displaySection">
       <div class="wrapper">
         <h2>Today's Latest Headlines</h2>
+        <div class="flag">
+            <img src="./images/canadian.png" alt="canadian flag" id="flag">
+        </div>
 
         <div class="topHeadlines">
           <div class="story">

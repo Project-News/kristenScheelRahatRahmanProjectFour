@@ -207,6 +207,20 @@ html {
   box-sizing: border-box;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
@@ -243,7 +257,19 @@ header {
   padding: 25px 0;
 }
 
-header h1 {
+header .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .head h1 {
   font-family: "Abril Fatface", cursive;
   font-size: 4rem;
   text-transform: uppercase;
@@ -254,6 +280,11 @@ header h1 {
   font-size: 3rem;
   text-align: center;
   padding: 20px 0;
+}
+
+.displaySection .flag {
+  width: 10%;
+  margin: 0 auto 20px;
 }
 
 .displaySection .topHeadlines {
@@ -359,13 +390,25 @@ footer a:hover, footer a:focus {
 }
 
 @media (max-width: 500px) {
+  .displaySection .flag {
+    width: 15%;
+  }
   .categorySection .buttons button {
     width: 70%;
   }
 }
 
 @media (max-width: 340px) {
-  header h1 {
-    text-align: center;
+  header .head h1 {
+    font-size: 3rem;
+  }
+  .displaySection h2 {
+    font-size: 2.5rem;
+  }
+  .displaySection .flag {
+    width: 20%;
+  }
+  .displaySection .topHeadlines .story h3 {
+    font-size: 2rem;
   }
 }
